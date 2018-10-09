@@ -5,7 +5,7 @@
     <link href="http://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="style.css" >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
-    <title>Simple Chat App</title>
+    <title>Liquid-UnderWorld</title>
   </head>
 
   <body>
@@ -15,18 +15,45 @@
 	<button id="send_username" type="button">Change username</button>
       </div>
     </section>
-
-    <section id="chatroom">
-      <section id="feedback"></section>
-    </section>
+	<div class="container">
+		<div class="player">
+			<div class="player-nav">
+				<h1>Liquid-UnderWorld</h1>	
+			</div>	
+		</div>
+		<div class="chat">
+			<div class="chat-nav">
+				<div class="btns">
+					<a href="#">Liquid</a>
+					<a href="#">Jungle</a>
+					<a href="#">Dubstep</a>
+					<a href="#">Techno</a>
+					<a href="#">Mix</a>
+				</div>
+				<div class="timedate">
+					<p class="tdp"></p>	
+				</div>
+			</div>	
+		    <div class="input_zone"> 
+		      <input id="message" autofocus type="text" />
+		    </div>
+		    <div id="chatroom">
+		      <div id="feedback"></div>
+		    </div>
+		</div>	
+	</div>
 
     
 
-    <section id="input_zone"> 
-      <input id="message" class="vertical-align" type="text" />
-    </section>
 
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="chat.js"></script>
+    <script charset="utf-8">
+	setInterval(function(){
+
+        $(".tdp").html(Date($.now()));
+
+	},1000);
+    </script>
   </body>
 </html>
