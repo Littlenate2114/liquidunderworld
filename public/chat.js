@@ -20,7 +20,7 @@ $(function(){
 	socket.on("new_message", (data) => {
 		feedback.html('');
 		message.val('');
-		chatroom.append("<p class='message'>" + data.username + ": " + data.message + "</p>")
+		chatroom.append("<p class='message'>" + data.username + ": " + "<span style='color:white;'>" + data.message + "</span>" +  "</p>")
 	})
 
 	//Emit a username
