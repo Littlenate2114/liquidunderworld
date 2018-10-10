@@ -1,13 +1,17 @@
 {
-  "name": "liquidunderworld-master",
+  "name": "chat",
   "version": "1.0.0",
-  "description": "liquidunderworld",
-  "main": "app.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js",
+    "test": "mocha --reporter spec test"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  }
 }
