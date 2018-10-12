@@ -1,23 +1,21 @@
-const express = require('express')
-const app = express()
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+var path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
+server.listen(process.env.PORT || 3000, function() {
+  console.log('Server listening');
+});
 
-//set the template engine ejs
-app.set('view engine', 'ejs')
-
-//middlewares
-app.use(express.static('public'))
-
-
-//routes
-app.get('/', (req, res) => {
-	res.render('index')
-})
-
-//Listen on port 3000
-server = app.listen(3000)
-
-
+//-----------------------------------------------------------------------------
+// Routes.
+//-----------------------------------------------------------------------------
+app.get("/", function(req, res) {
+    res.render("chat");
+});
 
 //socket.io instantiation
 const io = require("socket.io")(server)
